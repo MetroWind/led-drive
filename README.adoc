@@ -30,6 +30,5 @@ WIP
 
 == References
 
-.
-https://cpldcpu.wordpress.com/2014/01/14/light_ws2812-library-v2-0-part-i-understanding-the-ws2812/[Understanding
+1. https://cpldcpu.wordpress.com/2014/01/14/light_ws2812-library-v2-0-part-i-understanding-the-ws2812/[Understanding
 the WS2812]

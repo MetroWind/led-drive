@@ -74,7 +74,7 @@ int main(int argc, char** argv)
     }
 
 
-    LEDDrive led(60, std::move(*spi_result),
+    LEDDrive led(led_count, std::move(*spi_result),
                  std::make_unique<Walk>(Color{0, 255, 255}, 8));
     auto result = led.run();
     if(!result.has_value())
