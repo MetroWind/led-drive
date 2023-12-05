@@ -1,6 +1,6 @@
 = LED-Drive
 
-A naively simple WS2812 LED stripe driver for Raspberry Pi.
+A naively simple WS2812 LED stripe driver for the Raspberry Pi.
 
 == Introduction
 
