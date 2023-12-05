@@ -1,0 +1,35 @@
+= LED-Drive
+
+A naively simple WS2812 LED stripe driver for Raspberry Pi.
+
+== Introduction
+
+LED-Drive is a simple program that drives a WS2812-based LED stripe using Raspberry Pi’s SPI output. It sounds like an easy task, but there are actually a surprising amount of caveats to navigate.
+
+=== SPI drivers
+
+There are two SPI drivers on the Raspberry Pi:
+
+- The Linux standard `spidev` high level driver
+- The BCM2835 low lever driver
+
+The `spidev` driver is generic regardless of hardware. It basically
+creates a bunch of `/dev/spidev?.?` devices, and let you do I/O on
+them like on a regular file using `read`, `write`, and `ioctl` system
+calls. The BCM driver is obviously specific to the BCM chip that is on the Pi, and it uses the GPIO pins directly (`/dev/mem` or `/dev/gpiomem`) to control the SPI. In LED-Drive, a high lever http://www.airspayce.com/mikem/bcm2835/[wrapper] of it is used.
+
+LED-Driver has implementations on top of both SPI drivers. However, due to the strict timing requirements (I think) of the WS2812 chip, only the BCM driver works (to a certain degree). The `spidev` driver never worked for me.
+
+=== Timing and SPI frequency
+
+WIP
+
+== Usage
+
+WIP
+
+== References
+
+.
+https://cpldcpu.wordpress.com/2014/01/14/light_ws2812-library-v2-0-part-i-understanding-the-ws2812/[Understanding
+the WS2812]
